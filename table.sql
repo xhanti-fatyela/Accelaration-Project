@@ -12,7 +12,7 @@ CREATE table customers(
    id serial not null,
    customer_name text not null,
    customer_email text not null
-)
+);
 
 INSERT INTO products (product_name, price, quantity, size) VALUES ('Red Printed T-shirt', 200,1,'small');
 INSERT INTO products (product_name, price, quantity, size) VALUES ('Black & White Sneaker', 1200,1,'UK7');
@@ -26,6 +26,10 @@ INSERT INTO customers (customer_name, customer_email) VALUES ('Sonwabile','soso@
 
 UPDATE products SET product_name = 'Black & White Sneaker', price = 1200 WHERE id = 1;
 UPDATE products SET product_name = 'Pink Pants', price = 120 WHERE id = 2;
+
+SELECT product_name.product_name, price.price, quantity.quantity,size.size
+FROM products
+INNER JOIN customers ON Orders.customer_name=customers.customer_name;
 
 
 
